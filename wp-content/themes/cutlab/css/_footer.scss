@@ -1,0 +1,46 @@
+@import '_legend';
+@import '_tools';
+@import '_grid';
+
+footer.footer{
+    overflow: visible !important;
+    padding: 10px 0;
+    div.copyright{
+      padding: 10px;
+      float: left;
+      text-align: center;
+      width: 100%;
+      background-color: $background-grey;
+  }
+  .copy{
+    @media #{$medium}{
+        width: 50%;
+        float: left;
+        text-align: left;
+    }
+}
+.dev-jason{
+    @media #{$medium}{
+        float: right;
+        width: 50%;
+        text-align: right;
+    }
+}
+}
+
+//sticky footer
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    margin: 0 0 49px; /* bottom = footer height */
+}
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 49px;
+    width: 100%;
+}
+//end sticky footer

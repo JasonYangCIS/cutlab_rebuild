@@ -1,0 +1,110 @@
+// Default Tools and stuff here
+
+@import '_legend';
+
+//accepts rem amounts
+@mixin fs ($sizeValue: 1 , $imp: '') {
+  font-size: ($sizeValue * 10) + px + $imp;
+  font-size: $sizeValue + rem + $imp;
+}
+// accepts pixel amounts
+@mixin rfs  ($sizeValue: 16 , $imp: '') {
+  font-size: $sizeValue  + px + $imp;
+  font-size: ($sizeValue / 10 ) + rem + $imp;
+}
+
+
+@mixin clearfix() { *zoom: 1; 
+  &:before,
+  &:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+  }
+  &:after {
+    clear: both;
+  } 
+}
+// animation 
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content
+  }
+  @-moz-keyframes #{$name} {
+    @content
+  }
+  @-ms-keyframes #{$name} {
+    @content
+  }
+  @-o-keyframes #{$name} {
+    @content
+  }
+  @keyframes #{$name} {
+    @content
+  }
+}
+@mixin animation($value) {
+  -webkit-animation: $value;
+  -moz-animation: $value;
+  -ms-animation: $value;
+  -o-animation: $value;
+  animation: $value;
+}
+
+
+
+@mixin fonts($f:sans-serif,$w:normal,$s:1,$c:#000, $i: normal) {
+  @if $f != $f1  {
+    font-family: $f;
+  }
+  @if $w != $w1 {
+     font-weight: $w;
+  }
+  @include rfs( $s); 
+  color: $c;
+  @if $i != normal {
+      font-style: $i;
+  }
+} 
+@mixin bg($c:white) {
+    background-color: $c;
+}
+@mixin transform($a:1px){
+    -webkit-transform: $a;
+    -moz-transform: $a;
+    -o-transform: $a;
+    transform: $a;
+}
+
+@mixin rotateText ($a) {
+    -ms-transform: rotate($a);
+    -moz-transform: rotate($a); 
+    -webkit-transform: rotate($a);
+    -o-transform: rotate($a);                   
+    transform: rotate($a);
+}
+@mixin box-shadow ($a) {
+    -webkit-box-shadow: $a;
+    -moz-box-shadow: $a; 
+    box-shadow: $a ; 
+
+}
+@mixin rounded-corners ($radius: 5px) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -o-border-radius: $radius;
+    border-radius: $radius;
+}
+@mixin transition ($a: all 0.5s ease  ) {
+    -webkit-transition: $a;
+    -o-transition: $a;
+    -moz-transition: $a;
+    transition: $a;
+}
+
+@mixin clean() { margin:0; padding:0;  }
+@mixin clear() { clear:both; }
+@mixin left() {float:left;  } 
+
+@mixin hidden() {
+  display: none !important;
+}
