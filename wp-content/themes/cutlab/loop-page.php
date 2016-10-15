@@ -28,13 +28,7 @@
 					<?php the_content(); ?>
 					<?php wp_reset_query(); ?>
 
-					<?php 
-					for($i=1; $i<=3; $i++){
-
-						?><div class="section-title"><?php echo get_field('section_title_' . $i); ?></div><?php
-						?><div class="section-block"><?php echo get_field('section_block_' . $i); ?></div><?php
-					}
-					?>
+					
 				</div>
 			</div>
 		</article>

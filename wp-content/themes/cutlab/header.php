@@ -44,7 +44,6 @@
 
     </head>
 
-    <div class="se-pre-con"></div>
     <body <?php body_class(); ?>>
       <div id="container">
         <header id="header" class="header">
@@ -59,7 +58,7 @@
                 <?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?>
                 <<?php echo $heading_tag; ?> id="site-title">
                 <a class="logo" href="<?php echo home_url()?>">
-                  <img alt="<?php bloginfo('name') ?>" src="<?php echo get_template_directory_uri(); ?>/img/logo.jpg"/>
+                  <img alt="<?php bloginfo('name') ?>" src="<?php echo get_template_directory_uri(); ?>/img/logo.png"/>
                   <?php /* <a href="<?php echo home_url()?>"><?php bloginfo('name') ?></a>
                   <span class="visuallyhidden"><?php bloginfo('name') ?></span>
                   */ ?>
