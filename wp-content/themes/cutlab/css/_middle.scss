@@ -1,3 +1,56 @@
 @import '_legend';
 @import '_tools';
 @import '_grid';
+
+.home-banner{
+	background-size: cover !important;
+	min-height: 280px;
+	position: relative;
+	@media #{$medium}{
+		min-height: 400px;
+	}
+	@media #{$large}{
+		min-height: 600px;
+	}
+	.banner-content{
+		position: absolute;
+		right: 5%;
+		bottom: 0;
+	}
+}
+h2.section-title{
+	text-align: left;
+	position: relative;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	@media #{$medium}{
+		text-align: center;
+	}
+	span{
+		background-color: $white;
+		z-index: 1;
+		position: relative;
+		padding-right: 20px;
+		@media #{$medium}{
+			margin: auto;
+			padding: 0 40px;
+		}
+	}
+	&:before{
+		z-index: 1;
+		position: absolute;
+		content: ' ';
+		width: 100%;
+		border-bottom: 5px solid $xltgrey;
+		left: 0;
+		bottom: calc(50% - 5px);
+	}
+}
+
+#mission{
+	.mission-content{
+		text-align: center;
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+}

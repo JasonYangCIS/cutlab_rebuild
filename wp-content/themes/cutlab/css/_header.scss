@@ -19,6 +19,8 @@ body{
 	}
 }
 header.header{
+	position: fixed;
+	top: 0;
 	@media #{$medium}{
 		overflow: visible !important;
 	}
@@ -39,8 +41,6 @@ header.header{
 		height: 100vh;
 		display: block;
 		background: url(../img/overlay.png) $dkgrey repeat;
-		position: fixed;
-		top: 0;
 		@include transition(all 0.5s ease);
 		@include transform(translate(-100%));
 		@media #{$medium}{

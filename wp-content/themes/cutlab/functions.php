@@ -427,7 +427,7 @@ function employees () {
     'capability_type' => 'page',
     'hierarchical' => false,
     'rewrite' => false,   
-    'supports' => array('title','editor' , 'page-attributes')
+    'supports' => array('title','editor', 'thumbnail', 'page-attributes')
     );
   register_post_type('employees',$args);
 }
