@@ -48,29 +48,25 @@
       <div id="container">
         <header id="header" class="header">
           <div class="header_container">
-            <div class="wrapper">
-
+            <div class="mobile-logos">
               <div class="mobile_nav_btn">
                 <a id="nav-toggle" href="javascript:void(0)"><span></span></a>
               </div>
 
-              <div class="header_logo">
-                <?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?>
-                <<?php echo $heading_tag; ?> id="site-title">
-                <a class="logo" href="<?php echo home_url()?>">
-                  <img alt="<?php bloginfo('name') ?>" src="<?php echo get_template_directory_uri(); ?>/img/logo.png"/>
-                  <?php /* <a href="<?php echo home_url()?>"><?php bloginfo('name') ?></a>
-                  <span class="visuallyhidden"><?php bloginfo('name') ?></span>
-                  */ ?>
-                </a>
-                </<?php echo $heading_tag; ?>>
-              </div>
-              <div class="header-nav"><?php wp_nav_menu( array( 'container' => 'nav', 'fallback_cb' => 'readymobile_menu', 'theme_location' => 'primary', 'link_before' => '' ) ); ?></div>   
+              <?php get_sidebar('mobile-logos'); ?>
             </div>
+
+            <div class="header-nav"><?php wp_nav_menu( array( 'container' => 'nav', 'fallback_cb' => 'readymobile_menu', 'theme_location' => 'primary', 'link_before' => '' ) ); ?></div>   
           </div>
           <!--[if lte IE 7]> <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'> <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div> <![endif]-->
 
         </header>
         
+        <div class="desktop-logos">
+          <div class="wrapper">
+            <?php get_sidebar('desktop-logos'); ?>
+          </div>
+        </div>
+
         <div id="main" role="main">
 

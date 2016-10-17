@@ -47,18 +47,18 @@ if ( ! isset( $content_width ) ) $content_width = 590;
 	 Makes a check for HTTP on top of SSL/TLS (HTTPS) 
 	 to make sure the URL is correct.
       */
-   $google_jquery_url = ($_SERVER['SERVER_PORT'] == 443 ? "https" : "http") . 
-   "://ajax.googleapis.com/ajax/libs/jquery/$registered_jquery_version/jquery.min.js";
+  $google_jquery_url = ($_SERVER['SERVER_PORT'] == 443 ? "https" : "http") . 
+  "://ajax.googleapis.com/ajax/libs/jquery/$registered_jquery_version/jquery.min.js";
 
       /* 
 	 Get the HTTP header response for the this URL, and check that its ok. 
 	 If ok, include jQuery from Google CDN. 
       */
-   if(200 === wp_remote_retrieve_response_code(wp_remote_head($google_jquery_url))) {
-     wp_deregister_script('jquery');
-     wp_register_script('jquery', $google_jquery_url , false, null, $cdn_script_in_footer);
-   }
+  if(200 === wp_remote_retrieve_response_code(wp_remote_head($google_jquery_url))) {
+   wp_deregister_script('jquery');
+   wp_register_script('jquery', $google_jquery_url , false, null, $cdn_script_in_footer);
  }
+}
 }
   /* 
      Enqueue jQuery from Google if available. 
@@ -238,8 +238,8 @@ function ReadyArtwork_widgets_init() {
    'before_title' => '<h3 class="widget-title">',
    'after_title' => '</h3>',
    ) );
-
   register_sidebar( array(
+
    'name' => __( 'Page Sidebar', 'ReadyArtwork' ),
    'id' => 'sidebar-page',
    'description' => __( 'Edit Page Sidebars Here ', 'ReadyArtwork'  ),
@@ -247,6 +247,26 @@ function ReadyArtwork_widgets_init() {
    'after_widget' => "</aside>",
    'before_title' => '<h3 class="widget-title">',
    'after_title' => '</h3>',
+   ) );
+
+  register_sidebar( array(
+   'name' => __( 'Desktop Logos Sidebar', 'ReadyArtwork' ),
+   'id' => 'sidebar-desktop-logos',
+   'description' => __( 'Edit Desktop Logos Sidebars Here ', 'ReadyArtwork'  ),
+   'before_widget' => '<div class="logo-container">',
+   'after_widget' => '</div>',
+   'before_title' => '',
+   'after_title' => '',
+   ) );
+
+  register_sidebar( array(
+    'name' => __( 'Mobile Logos Sidebar', 'ReadyArtwork' ),
+   'id' => 'sidebar-mobile-logos',
+   'description' => __( 'Edit Mobile Logos Sidebars Here ', 'ReadyArtwork'  ),
+   'before_widget' => '<div class="logo-container">',
+   'after_widget' => '</div>',
+   'before_title' => '',
+   'after_title' => '',
    ) );
 
 
@@ -666,13 +686,13 @@ function my_gallery_shortcode($attr) {
     $gallery_style = "
   <style type='text/css'>
         #{$selector} {
-  margin: auto;
-}
+    margin: auto;
+  }
         #{$selector} .gallery-item {
-float: {$float};
-margin-top: 10px;
-text-align: center;
-width: {$itemwidth}%;
+  float: {$float};
+  margin-top: 10px;
+  text-align: center;
+  width: {$itemwidth}%;
 }
         #{$selector} img {
 border: 2px solid #cfcfcf;
@@ -700,17 +720,17 @@ foreach ( $attachments as $id => $attachment ) {
   $output .= "
   <{$icontag} class='gallery-icon'><a href='" . $link . "'' title='" . $title . "'><div class='gallery-img-container'>
   $thumbhtml
-  </div><div class='gallery-title'>". $title ."</div></a>";
+</div><div class='gallery-title'>". $title ."</div></a>";
 
 
-  if ( $captiontag && trim($attachment->post_excerpt) ) {
-    $output .= "
-    <div class='gallery-caption'>
+if ( $captiontag && trim($attachment->post_excerpt) ) {
+  $output .= "
+  <div class='gallery-caption'>
     " . wptexturize($attachment->post_excerpt) . "
-    </div>";
-  }
-  $output .= " </{$icontag}></{$itemtag}>";
-  $i++;
+  </div>";
+}
+$output .= " </{$icontag}></{$itemtag}>";
+$i++;
 }
 
 $output .= "

@@ -108,3 +108,23 @@
 @mixin hidden() {
   display: none !important;
 }
+
+@mixin displayFlex () {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+ }
+@mixin alignSelf ($position) {
+  -webkit-align-self: $position;
+  align-self: $position;
+}
+@mixin alignItems ($position) {
+  -webkit-align-items: $position;
+  align-items: $position;
+}
+@mixin justifyContent ($position) {
+  -webkit-justify-content: $position;
+  justify-content: $position;
+}

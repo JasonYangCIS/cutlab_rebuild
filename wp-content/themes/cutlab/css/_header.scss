@@ -1,45 +1,142 @@
 @import '_legend';
 @import '_tools';
 @import '_grid';
-
+#wpadminbar{
+	display: none !important;
+}
+html{
+	margin-top: 0 !important;
+}
+body{
+	padding-top: 46px;
+	@include transform(translate(0));
+	@include transition(all 0.5s ease);
+	@media #{$medium}{
+		padding-top: 50px;
+	}
+	&.open{
+		@include transform(translate(calc(100% - 100px)));
+	}
+}
 header.header{
-
+	@media #{$medium}{
+		overflow: visible !important;
+	}
+	.header_container{
+		background: url(../img/overlay.png) $dkgrey repeat;
+		width: 100%;
+		display: block;
+		float: left;
+		position: fixed;
+		z-index: 9999;
+		top: 0;
+		left: 0;
+	}
+	.header-nav{
+		float: left;
+		width: calc(100% - 44px);
+		height: 100%;
+		height: 100vh;
+		display: block;
+		background: url(../img/overlay.png) $dkgrey repeat;
+		position: fixed;
+		top: 0;
+		@include transition(all 0.5s ease);
+		@include transform(translate(-100%));
+		@media #{$medium}{
+			display: block;
+			@include transform(translate(0%));
+			height: auto;
+			width: 100%;
+		}
+		ul{
+			margin: 0;
+			padding-left: 75px;
+			@media #{$medium}{
+				@include displayFlex;
+				@include justifyContent(center);
+				position: relative;
+				height: 50px;
+				overflow: visible;
+			}
+			li{
+				padding: 10px 15px;
+				border-bottom: 1px solid rgba(87, 93, 89, 0.15);
+				@media #{$medium}{
+					padding: 10px 15px;
+					margin: 0 20px;
+					border-bottom: 0;
+					@include transition(padding 0.3s ease);
+					@include rounded-corners(0 0 5px 5px);
+				}
+				&:hover{
+					@media #{$medium}{
+						background-color: $green;
+						padding-top: 15px;
+						padding-bottom: 40px;
+					}
+				}
+			}
+		}
+	}
+	.mobile-logos{
+		display: block;
+		@media #{$medium}{
+			display: none;
+		}
+		.sidebar-mobile-logos{
+			width: calc(100% - 46px);
+			height: 46px;
+			float: left;
+			text-align: center;
+			@include displayFlex();
+			@include alignItems(center);
+			.logo-container{
+				width: 50%;
+				float: left;
+				display: block;
+			}
+		}
+	}
 	.mobile_nav_btn {
-		margin-top: 12px;
-		float: right;
 		position: relative;
-		text-align: right;
 		cursor: pointer;
 		z-index: 3;
+		float: left;
 		@include transition;
-		height: 55px;
+		height: 46px;
+		width: 46px;
+		background-color: $green;
 		@media #{$medium}{
 			display: none;
 		}
 		#nav-toggle {
-			height: 55px;
-			width: 55px;
+			height: 100%;
+			width: 100%;
 			display: block;
 			span {
-				top: 18px;
+				top: 0;
 				right: 0;
+				left: 0;
+				bottom: 0;
+				margin: auto;
 			}
 		}
 		#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
 			border-radius: 1px;
-			height: 9px;
-			width: 55px;
-			background: $grey;
+			height: 4px;
+			width: 20px;
+			background: $white;
 			position: absolute;
 			display: block;
 			content: '';
-			@include rounded-corners(5px);
+			@include rounded-corners(2px);
 		}
 		#nav-toggle span:before {
-			top: -15px; 
+			top: -7px; 
 		}
 		#nav-toggle span:after {
-			bottom: -15px;
+			bottom: -7px;
 		}
 
 		#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
@@ -62,3 +159,17 @@ header.header{
 	}
 }
 
+.desktop-logos{
+	display: none;
+	@media #{$medium}{
+		display: block;
+		width: 100%;
+		float: left;
+	}
+	.logo-container{
+		display: inline-block;
+		width: 50%;
+		padding: 50px 0;
+		text-align: center;
+	}
+}

@@ -49,3 +49,14 @@ a{
 		color: $ltgrey;
 	}
 }
+
+.header-nav a{
+	color: $white;
+	@include rfs(20);
+	line-height: 22px;
+	font-weight: 700;
+	@media #{$medium}{
+		@include rfs(16);
+		line-height: 18px;
+	}
+}

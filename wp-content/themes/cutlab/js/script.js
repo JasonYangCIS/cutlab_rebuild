@@ -10,6 +10,7 @@ jQuery(document).ready(function() {
 	jQuery('.mobile_nav_btn #nav-toggle').click(function() {
 		jQuery(this).parent().toggleClass('active');
 		jQuery('.header-nav').toggleClass('open');
+		jQuery('body').toggleClass('open');
 	});
 });
 
