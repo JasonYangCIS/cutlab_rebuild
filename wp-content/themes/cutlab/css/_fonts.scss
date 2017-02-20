@@ -153,4 +153,28 @@ section#blog{
 			}
 		}
 	}
+	.container-right{
+		a{
+			color: $grey;
+			@include rfs(20);
+			line-height: 24px;
+			font-weight: 700;
+			&:hover{
+				color: $ltgrey;
+			}
+		}
+		.post-date{
+			@include rfs(14);
+			line-height: 16px;
+			color: $ltgrey;
+			font-weight: 700;
+		}
+	}
+}
+
+.widget-title{
+	@include rfs(26);
+	line-height: 28px;
+	font-weight: 700;
+	color: $grey;
 }

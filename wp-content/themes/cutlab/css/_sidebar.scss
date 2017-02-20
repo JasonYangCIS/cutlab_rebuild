@@ -1,3 +1,29 @@
 @import '_legend';
 @import '_tools';
 @import '_grid';
+
+section#blog{
+	ul{
+		list-style: none;
+		padding: 0;
+		li{
+			width: 100%;
+			float: left;
+			display: block;
+			a{
+				float: left;
+				display: block;
+			}
+			.post-date{
+				width: 100%;
+				float: left;
+				display: block;
+				margin-top: 10px;
+				margin-bottom: 20px;
+				@media #{$medium}{
+					margin-bottom: 60px;
+				}
+			}
+		}
+	}
+}
