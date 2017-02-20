@@ -3,7 +3,17 @@
 
 @font-face{
 	font-family: helveticaNeue;
-	src: url(../fonts/HelveticaNeueLTCom-LtEx.ttf);
+	src: url(../fonts/HelveticaNeueLTCom-LtEx.ttf),
+	url(../fonts/HelveticaNeueLTCom-ThEx.ttf);
+}
+@font-face {
+	font-family: 'MyWebFont';
+	src: url('webfont.eot'); /* IE9 Compat Modes */
+	src: url('webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	url('webfont.woff2') format('woff2'), /* Super Modern Browsers */
+	url('webfont.woff') format('woff'), /* Pretty Modern Browsers */
+	url('webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+	url('webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 
 *{
@@ -88,6 +98,59 @@ h2.section-title{
 		@media #{$medium}{
 			line-height: 30px;
 			@include rfs(28);
+		}
+	}
+}
+
+
+section#team{
+	.staff-name a{
+		@include rfs(20);
+		line-height: 22px;
+		font-weight: 700;
+		&:hover{
+			color: $ltgrey;
+		}
+	}
+	.position{
+		@include rfs(16);
+		line-height: 18px;
+		font-weight: 700;
+		color: $grey;
+	}
+}
+
+section#menu{
+	.menu-column p{
+		@include rfs(18);
+		line-height: 28px;
+		color: $grey;
+		@media #{$medium}{
+			line-height: 32px;
+		}
+	}
+}
+
+section#blog{
+	.container-left{
+		h2{
+			@include rfs(26);
+			line-height: 30px;
+			font-weight: 700;
+			@media #{$medium}{
+				@include rfs(40);
+				line-height: 46px;
+			}
+		}
+		h3{
+			@include rfs(20);
+			line-height: 24px;
+			color: $ltgrey;
+			font-weight: 700;
+			@media #{$medium}{
+				@include rfs(28);
+				line-height: 36px;
+			}
 		}
 	}
 }

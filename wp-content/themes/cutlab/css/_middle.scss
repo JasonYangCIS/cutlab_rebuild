@@ -46,11 +46,84 @@ h2.section-title{
 		bottom: calc(50% - 5px);
 	}
 }
+.front-page-container{
+	position: relative;
+	background-color: $white;
+}
 
 #mission{
 	.mission-content{
 		text-align: center;
-		padding-left: 10%;
-		padding-right: 10%;
+		max-width: 960px;
+		margin: 0 auto;
+	}
+}
+
+section#team{
+	ul{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		li{
+			@include column(12);
+			padding-bottom: 20px;
+			@media #{$medium}{
+				@include column(3);
+				padding-bottom: 60px;
+			}
+			.staff-name{
+				width: 100%;
+				display: block;
+				float: left;
+				padding-bottom: 10px;
+				text-align: center;
+				@media #{$medium}{
+					padding-bottom: 20px;
+				}
+			}
+			.position{
+				width: 100%;
+				display: block;
+				float: left;
+				text-align: center;
+			}
+		}
+	}
+}
+
+section#menu{
+	.menu-column{
+		@include column(12);
+		@media #{$medium}{
+			@include column(4);
+		}
+	}
+	.menu-banner{
+		width: 100%;
+		float: left;
+		display: block;
+		margin-bottom: 40px;
+		img{
+			width: 100%;
+			@include rounded-corners(10px);
+		}
+	}
+}
+
+section#blog{
+	width: 100%;
+	float: left;
+	display: block;
+	.container-left{
+		@include column(12);
+		@media #{$medium}{
+			@include column(9);
+		}
+	}
+	.container-right{
+		@include column(12);
+		@media #{$medium}{
+			@include column(3);
+		}
 	}
 }
