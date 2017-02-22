@@ -32,9 +32,6 @@ section#social-media{
 	.sidebar-social-media{
 		max-width: 960px;
 		margin: 0 auto;
-		.widget-title{
-			display: none;
-		}
 		.widget_sp_image{
 			@include column(3);
 			a{
@@ -44,8 +41,24 @@ section#social-media{
 		}
 	}
 }
-
-.sidebar-social-media{
+footer#footer{
+	.sidebar-social-media-footer{
+		text-align: center;
+		aside.widget_sp_image{
+			display: inline-block;
+			height: 50px;
+			width: 50px;
+			margin: 0 5px;
+			a{
+				@include rounded-corners(10px);
+			}
+		}
+	}
+}
+.sidebar-social-media, .sidebar-social-media-footer{
+	.widget-title{
+		display: none;
+	}
 	.widget_sp_image{
 		text-align: center;
 		a{

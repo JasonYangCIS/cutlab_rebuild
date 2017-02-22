@@ -7,21 +7,23 @@ footer.footer{
   padding: 10px 0;
   div.copyright{
     padding: 10px;
-    float: left;
     text-align: center;
-    width: 100%;
+    display: block;
+    margin: 40px auto;
+    max-width: 700px;
+    @include rounded-corners(10px);
+    overflow: hidden;
+    background-color: $xltgrey;
   }
-  .copy{
+  .copy, .dev-jason{
+    padding: 10px 10px;
+    display: inline-block;
     @media #{$medium}{
-      width: 50%;
-      float: left;
       text-align: left;
     }
   }
   .dev-jason{
     @media #{$medium}{
-      float: right;
-      width: 50%;
       text-align: right;
     }
   }

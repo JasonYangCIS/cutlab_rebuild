@@ -189,3 +189,10 @@ section#contact{
 		}
 	}
 }
+
+footer#footer{
+	.copyright *{
+		@include rfs(13);
+		color: $grey;
+	}
+}

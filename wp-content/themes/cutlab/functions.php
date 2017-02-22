@@ -238,11 +238,21 @@ function ReadyArtwork_widgets_init() {
    'before_title' => '<h3 class="widget-title">',
    'after_title' => '</h3>',
    ) );
-  register_sidebar( array(
 
+  register_sidebar( array(
    'name' => __( 'Social Media Sidebar', 'ReadyArtwork' ),
    'id' => 'sidebar-social-media',
    'description' => __( 'Edit Social Media Sidebars Here ', 'ReadyArtwork'  ),
+   'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+   'after_widget' => "</aside>",
+   'before_title' => '<h3 class="widget-title">',
+   'after_title' => '</h3>',
+   ) );
+
+ register_sidebar( array(
+   'name' => __( 'Social Media Footer Sidebar', 'ReadyArtwork' ),
+   'id' => 'sidebar-social-media-footer',
+   'description' => __( 'Edit Social Media Footer Sidebars Here ', 'ReadyArtwork'  ),
    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
    'after_widget' => "</aside>",
    'before_title' => '<h3 class="widget-title">',
@@ -422,7 +432,7 @@ function employees () {
   $args = array(
     'label' => __('Employees', 'ReadyArtwork' ),
     'singular_label' => __('Employees', 'ReadyArtwork' ),
-    'public' => false,
+    'public' => true,
     'show_ui' => true,
     'capability_type' => 'page',
     'hierarchical' => false,
