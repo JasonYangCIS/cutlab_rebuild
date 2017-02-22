@@ -27,3 +27,50 @@ section#blog{
 		}
 	}
 }
+
+section#social-media{
+	.sidebar-social-media{
+		max-width: 960px;
+		margin: 0 auto;
+		.widget-title{
+			display: none;
+		}
+		.widget_sp_image{
+			@include column(3);
+			a{
+				@include rounded-corners(50%);
+				padding: 20px;
+			}
+		}
+	}
+}
+
+.sidebar-social-media{
+	.widget_sp_image{
+		text-align: center;
+		a{
+			display: inline-block;
+			background-color: $smmgrey;
+			&[title="facebook"]{
+				&:hover{
+					background-color: $facebook;
+				}
+			}
+			&[title="instagram"]{
+				&:hover{
+					background-color: $instagram;
+				}
+			}
+			&[title="pinterest"]{
+				&:hover{
+					background-color: $pinterest;
+				} 
+			}
+			&[title="yelp"]{
+				&:hover{
+					background-color: $yelp;
+				}
+			}
+		}
+	}
+}

@@ -68,8 +68,13 @@
         </div>
       </section>
 
-      <section id="contact">
+      <section id="social-media">
         <h2 class="section-title"><span><?php echo get_field('section_title_5');?></span></h2>
+        <?php echo get_sidebar('social-media'); ?>
+      </section>
+
+      <section id="contact">
+        <h2 class="section-title"><span><?php echo get_field('section_title_6');?></span></h2>
       </section>
 
     </div>
