@@ -75,6 +75,14 @@
 
       <section id="contact">
         <h2 class="section-title"><span><?php echo get_field('section_title_6');?></span></h2>
+        <div class="google-maps-container">
+          <div class="responsive-iframe-container">
+            <?php echo get_field('google_map'); ?>
+          </div>
+        </div>
+        <div class="contact-info-container">
+          <?php echo get_field('contact_info'); ?>
+        </div>
       </section>
 
     </div>

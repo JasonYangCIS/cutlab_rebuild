@@ -128,3 +128,41 @@ section#blog{
 	}
 }
 
+section#contact{
+	.google-maps-container{
+		@include column(12);
+		margin-bottom: 40px;
+		@media #{$medium}{
+			@include column(6);
+		}
+	}
+	.contact-info-container{
+		@include column(12);
+		text-align: center;
+		@media #{$medium}{
+			@include column(6);
+		}
+	}
+}
+
+/* Responsive iFrame */
+.responsive-iframe-container {
+	position: relative;
+	padding-bottom: 46.25%;
+	padding-top: 30px;
+	height: 0;
+	overflow: hidden;
+	@media #{$medium}{
+		padding-bottom: 36.25%;
+	}
+}
+
+.responsive-iframe-container iframe,   
+.vresponsive-iframe-container object,  
+.vresponsive-iframe-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}

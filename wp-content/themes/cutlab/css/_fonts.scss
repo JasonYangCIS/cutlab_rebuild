@@ -178,3 +178,14 @@ section#blog{
 	font-weight: 700;
 	color: $grey;
 }
+
+section#contact{
+	.contact-info-container *{
+		color: $grey;
+		@include rfs(16);
+		line-height: 26px;
+		@media #{$medium}{
+			line-height: 30px;
+		}
+	}
+}
