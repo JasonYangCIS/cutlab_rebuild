@@ -16,13 +16,7 @@
     <header>
       <h1 class="blog-title"><?php the_title(); ?></h1>
     </header>
-    <div class="featured-object">
-         <?php if ( has_post_thumbnail() ): ?>
-            <?php the_post_thumbnail();  ?>
-         <?php else: ?>
-            <?php echo catch_that_image('image'); ?>
-         <?php endif; ?>
-      </div>
+
     <?php  the_content(); ?>
 
     <footer>

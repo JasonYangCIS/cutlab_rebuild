@@ -19,7 +19,7 @@
 		<?php if ( have_posts() ): while ( have_posts() ) : the_post(); ?>
 			<li>
 				<a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a>
-				<span class="post-date">Published on:<?php echo get_the_date(); ?></span>
+				<span class="post-date">Published on: <?php echo get_the_date(); ?></span>
 			</li>
 		<?php endwhile; endif; ?>
 	</ul>
