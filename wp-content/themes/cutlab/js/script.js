@@ -11,9 +11,14 @@ jQuery(document).ready(function() {
 		jQuery(this).parent().toggleClass('active');
 		jQuery('.header-nav').toggleClass('open');
 		jQuery('body').toggleClass('open');
+		jQuery('.header-nav').height(jQuery('body').height() + 50);
 	});
+
 	if(jQuery('body.home').length > 0){
 		jQuery(".menu-header-container a").click(function(event) {
+			jQuery('.mobile_nav_btn').removeClass('active');
+			jQuery('.header-nav').removeClass('open');
+			jQuery('body').removeClass('open');
 			event.preventDefault();
 			var anchorId = jQuery(this).attr('href');
 			anchorId = anchorId.split('#');
