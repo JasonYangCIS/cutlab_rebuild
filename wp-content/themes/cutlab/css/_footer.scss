@@ -5,6 +5,11 @@
 footer.footer{
   overflow: visible !important;
   padding: 10px 0;
+  background-color: $footergrey;
+  padding-top: 40px;
+  @media #{$large}{
+    padding: 80px 0 40px 0;
+  }
   div.copyright{
     padding: 10px;
     text-align: center;

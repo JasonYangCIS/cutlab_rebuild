@@ -27,7 +27,6 @@
 				<div class="content-container">
 					<?php the_content(); ?>
 					<?php wp_reset_query(); ?>
-
 					
 				</div>
 			</div>

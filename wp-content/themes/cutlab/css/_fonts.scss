@@ -19,12 +19,14 @@
 *{
 	font-family: helveticaNeue;
 }
-p, li{
+p, li, body{
 	@include rfs(20);
+	line-height: 22px;
 }
 h1{
 	@include rfs(26);
 	font-weight: 700;
+	color: $dkgrey;
 	@media #{$medium}{
 		@include rfs(34);
 	}
@@ -42,20 +44,25 @@ h2{
 }
 h3{
 	@include rfs(22);
+	line-height: 24px;
 }
 
 h4{
 	@include rfs(18);
+	line-height: 22px;
 }
 
 h5{
 	@include rfs(16);
+	line-height: 18px;
 }
 
 a{
 	text-decoration: none;
 	color: $dkgrey;
 	@include transition(all 0.5s ease);
+	font-size: inherit;
+	line-height: inherit;
 	&:hover{
 		color: $ltgrey;
 	}
@@ -131,7 +138,7 @@ section#menu{
 	}
 }
 
-section#blog{
+section#blog, .sidebar-right{
 	.container-left{
 		h2{
 			@include rfs(26);
@@ -194,5 +201,35 @@ footer#footer{
 	.copyright *{
 		@include rfs(13);
 		color: $grey;
+	}
+}
+
+.employees{
+	.employee-bio{
+		p{
+			@include rfs(16);
+			line-height: 24px;
+			@media #{$large}{
+				line-height: 26px;
+			}
+		}
+	}
+	.gallery-title{
+		h2{
+			@include rfs(30);
+			line-height: 32px;
+			font-weight: 700;
+			color: $grey;
+			@media #{$large}{
+				@include rfs(40);
+				line-height: 42px;
+			}
+		}
+		h3{
+			@include rfs(26);
+			line-height: 28px;
+			font-weight: 700;
+			color: $ltgrey;
+		}
 	}
 }

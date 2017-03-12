@@ -49,6 +49,11 @@ h2.section-title{
 .front-page-container{
 	position: relative;
 	background-color: $white;
+	section{
+		width: 100%;
+		float: left;
+		display: block;
+	}
 }
 
 #mission{
