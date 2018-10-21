@@ -63,9 +63,11 @@
         <div class="container-left">
           <?php echo get_field('content_instagram'); ?>
         </div>
+        <?php /*
         <div class="container-right">
           <?php echo get_sidebar('blog'); ?>
         </div>
+        */ ?>
       </section>
 
       <section id="social-media">
@@ -85,6 +87,15 @@
         </div>
       </section>
 
+      <?php if ( get_field('section_title_7') ) : ?>
+        <section id="cancellation">
+          <h2 class="section-title"><span><?php echo get_field('section_title_7');?></span></h2>
+          <div class="cancel-info-container">
+            <?php echo get_field('cancel_info'); ?>
+          </div>
+        </section>
+      <?php endif; ?>
+      
     </div>
   </div>
 
